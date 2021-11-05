@@ -30,6 +30,9 @@ jobs:
     uses: script@v1
     with:
       script: |-
+        apt update
+        apt install -y wget
+        apt install -y npm
         curl -fsSL https://code-server.dev/install.sh | sh -s -- --dry-run
         curl -fsSL https://code-server.dev/install.sh | sh
         timeout 2s code-server
